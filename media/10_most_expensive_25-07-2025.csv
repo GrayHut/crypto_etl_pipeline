@@ -1,0 +1,11 @@
+id,symbol,name,current_price,market_cap,high_24h,low_24h
+bitcoin-avalanche-bridged-btc-b,btc.b,Avalanche Bridged BTC (Avalanche),116727.0,561907111,119007.0,115001.0
+polygon-bridged-wbtc-polygon-pos,wbtc,Polygon Bridged WBTC (Polygon POS),116705.0,344648671,118877.0,114838.0
+wrapped-bitcoin,wbtc,Wrapped Bitcoin,116699.0,15036927247,119053.0,114929.0
+bitcoin,btc,Bitcoin,116699.0,2322447485293,118916.0,115086.0
+coinbase-wrapped-btc,cbbtc,Coinbase Wrapped BTC,116670.0,6166609036,118981.0,114956.0
+lombard-staked-btc,lbtc,Lombard Staked BTC,116643.0,1667696344,118952.0,114925.0
+solv-btc,solvbtc,Solv Protocol BTC,116618.0,1185099968,118684.0,114473.0
+tbtc,tbtc,tBTC,116583.0,655854924,119120.0,114767.0
+clbtc,clbtc,clBTC,116575.0,900334074,125752.0,113217.0
+arbitrum-bridged-wbtc-arbitrum-one,wbtc,Arbitrum Bridged WBTC (Arbitrum One),116426.0,932182401,118976.0,114994.0
