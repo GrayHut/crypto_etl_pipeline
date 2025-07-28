@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{{
+            width:100%;
+            border-collapse:collapse;
+        }}
+        th, td{{
+            border:1px, solid #ddd;
+            padding:8px;
+            text-align:left;
+        }}
+        th{{
+            background-color:#A6A09B;
+            color:#E7E5E4;
+        }}
+    </style>
+</head>
+<body>
+    <h2>Top 10 coins {date_today}</h2>
+    <p>Good day!!\n</p>
+    <p>These are today's top crypto coins</p>
+    
+    {top_10_coins.to_html(index=False, classes='data', header=True, border=1)}
+
+    <p>Have a nice day\n</p>
+    <p>Regards,\nGrayhut Automations</p>
+
+    <p>@gray-hut Official</p>
+    
+</body>
+</html>
