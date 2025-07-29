@@ -14,21 +14,21 @@ from email.mime.base import MIMEBase    #a base class for creating MIME objects 
 import email.encoders   #provides functions to encode MIME objects particularly for non-text attachments
 
 #-------------------------------------------------------------------------------------------------------------------------
+load_dotenv()
 
 def email_send(subject, body, file_name, recepient):
 
-    load_dotenv()
 
     smtp_server='smtp.gmail.com'
-    smtp_port=587
-    sender='ondiekiowen99@gmail.com'
+    smtp_port=os.getenv('SMTP_PORT')
+    sender=os.getenv('SENDER_EMAIL')
     google_app_pass=os.getenv("GOOGLE_PASS")
     #recepient='ondiekiowen@gmail.com'
 
 
     message=MIMEMultipart()
     message['From']=sender
-    message['To']=', '.join(recepient)
+    message['To']=', '.join(recepient)  #for multiple recepients
     message['Subject']=subject
 
     message.attach(MIMEText(body,'html'))
@@ -81,23 +81,15 @@ def crypto_data_access():
         #adding columns
         #df['time_stamp']=date_today
 
-        #selecting the top 10 most expensive coins
-        # most_expensive_coins=df.sort_values(by='current_price', ascending=False)
-        # top_10_coins=most_expensive_coins.head(10)
-        # top_10_coins.to_csv(f'media/10_most_expensive_{date_today}.csv', index=False)
-
+        #filtering/sorting out top 10 largest coins based on current price...
         top_10_coins=df.nlargest(10, 'current_price')
 
-        # if top_10_coins:
-        #     print('Top 10 coins exist')
-        # else:
-        #     print('Top10 Error')
-
+        
         #saving the data as .csv
-        file_name=f'/media/gray-hut/E/Edu/LuxDev/luxfiles/projects/crypto_etl_pipeline/media/crypto-data-for-{date_today}.csv'
+        abs_file_path=os.getenv('250_COINS_CSV_PATH')
+        file_name=f'{abs_file_path}/crypto-data-for-{date_today}.csv'
         df.to_csv(file_name, index=False)
-        # file_name_2=f'/media/gray-hut/E/Edu/LuxDev/luxfiles/projects/crypto_etl_pipeline/media/top-10-{date_today}.csv'
-        # top_10_coins.to_csv(file_name_2)
+        
         print('Crypto CSV saved successfully')
 
         subject=f"Top crypto coins for {date_today}"
